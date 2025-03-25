@@ -1,4 +1,3 @@
-/* General Styling */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #1e1e2e;
@@ -8,20 +7,17 @@ body {
     text-align: center;
 }
 
-/* Main Container */
 .container {
     max-width: 600px;
     margin: 20px auto;
 }
 
-/* Main Heading */
 h1 {
     font-size: 26px;
     color: #ffd700;
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Sections */
 .card {
     background: #2a2a40;
     padding: 20px;
@@ -35,7 +31,6 @@ h1 {
     transform: scale(1.02);
 }
 
-/* Forms */
 form {
     display: flex;
     flex-direction: column;
@@ -56,12 +51,6 @@ input, select {
     color: white;
 }
 
-input:focus, select:focus {
-    border-color: #00ffcc;
-    outline: none;
-}
-
-/* Buttons */
 .add-btn {
     background: #00ffcc;
     color: black;
@@ -74,7 +63,6 @@ input:focus, select:focus {
     background: #00cc99;
 }
 
-/* Task & Book Lists */
 ul {
     list-style: none;
     padding: 0;
@@ -98,7 +86,6 @@ li.show {
     transform: translateY(0);
 }
 
-/* Delete Button */
 .delete-btn {
     background: #ff5555;
     color: white;
@@ -113,23 +100,10 @@ li.show {
     background: #cc4444;
 }
 
-/* Footer */
 footer {
     padding: 10px;
     background-color: #222;
     color: white;
     text-align: center;
     font-size: 14px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
