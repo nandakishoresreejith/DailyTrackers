@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment, Project & Library Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>📚 Assignment, Project & Library Tracker</h1>
+
+        <!-- Assignments & Projects Section -->
+        <section class="card">
+            <h2>📝 Assignments & Projects</h2>
+            <form id="task-form">
+                <input type="text" id="task-name" placeholder="Enter Task Name" required>
+                <input type="date" id="task-due-date" required>
+                <select id="task-type">
+                    <option value="Assignment">Assignment</option>
+                    <option value="Project">Project</option>
+                </select>
+                <button type="submit" class="add-btn">Add Task</button>
+            </form>
+            <ul id="task-list"></ul>
+        </section>
+
+        <!-- Library Book Tracker Section -->
+        <section class="card">
+            <h2>📖 Library Book Tracker</h2>
+            <form id="book-form">
+                <input type="text" id="book-title" placeholder="Book Title" required>
+                <input type="text" id="book-author" placeholder="Author Name" required>
+                <input type="date" id="book-due-date" required>
+                <button type="submit" class="add-btn">Add Book</button>
+            </form>
+            <ul id="book-list"></ul>
+        </section>
+    </div>
+
+    <!-- Footer with Creator's Name -->
+    <footer>
+        <p>Created by <b>NANDA KISHORE SREEJITH SBNG </b> |CSE</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
