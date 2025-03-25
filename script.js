@@ -1,14 +1,13 @@
-// Wait until page loads
 document.addEventListener("DOMContentLoaded", function() {
     loadTasks();
     loadBooks();
+    checkNotifications();
 });
 
 // ==== TASK MANAGER (Assignments & Projects) ====
 const taskForm = document.getElementById("task-form");
 const taskList = document.getElementById("task-list");
 
-// Add Task
 taskForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -24,20 +23,17 @@ taskForm.addEventListener("submit", function(event) {
     }
 });
 
-// Save Task to Local Storage
 function saveTask(task) {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     tasks.push(task);
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-// Load Tasks from Local Storage
 function loadTasks() {
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
     tasks.forEach(displayTask);
 }
 
-// Display Task in List
 function displayTask(task) {
     const li = document.createElement("li");
     li.innerHTML = `<b>${task.type}:</b> ${task.name} - Due: ${task.due} 
@@ -50,6 +46,12 @@ function displayTask(task) {
     });
 
     taskList.appendChild(li);
+}
+
+function deleteTask(taskName) {
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks = tasks.filter(task => task.name !== taskName);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 // ==== LIBRARY BOOK TRACKER ====
@@ -94,4 +96,17 @@ function displayBook(book) {
     });
 
     bookList.appendChild(li);
+}
+
+function deleteBook(bookTitle) {
+    let books = JSON.parse(localStorage.getItem("books")) || [];
+    books = books.filter(book => book.title !== bookTitle);
+    localStorage.setItem("books", JSON.stringify(books));
+}
+
+// Notifications for due dates
+function checkNotifications() {
+    if (Notification.permission !== "granted") {
+        Notification.requestPermission();
+    }
 }
